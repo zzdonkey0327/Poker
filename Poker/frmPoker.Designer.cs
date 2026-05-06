@@ -30,13 +30,14 @@
         {
             this.grpPoker = new System.Windows.Forms.GroupBox();
             this.grpBet = new System.Windows.Forms.GroupBox();
-            this.lblMoneyText = new System.Windows.Forms.Label();
-            this.txtMoney = new System.Windows.Forms.TextBox();
-            this.lblBetText = new System.Windows.Forms.Label();
-            this.txtBet = new System.Windows.Forms.TextBox();
             this.btnBet = new System.Windows.Forms.Button();
+            this.txtBet = new System.Windows.Forms.TextBox();
+            this.lblBetText = new System.Windows.Forms.Label();
+            this.txtMoney = new System.Windows.Forms.TextBox();
+            this.lblMoneyText = new System.Windows.Forms.Label();
             this.grpButton = new System.Windows.Forms.GroupBox();
             this.lblResult = new System.Windows.Forms.Label();
+            this.lblPrize = new System.Windows.Forms.Label();
             this.btnCheck = new System.Windows.Forms.Button();
             this.btnChangeCard = new System.Windows.Forms.Button();
             this.btnDealCard = new System.Windows.Forms.Button();
@@ -46,10 +47,12 @@
             // 
             // grpPoker
             // 
-            this.grpPoker.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.grpPoker.Location = new System.Drawing.Point(12, 12);
+            this.grpPoker.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.grpPoker.Location = new System.Drawing.Point(18, 18);
+            this.grpPoker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpPoker.Name = "grpPoker";
-            this.grpPoker.Size = new System.Drawing.Size(485, 160);
+            this.grpPoker.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpPoker.Size = new System.Drawing.Size(728, 240);
             this.grpPoker.TabIndex = 0;
             this.grpPoker.TabStop = false;
             this.grpPoker.Text = "牌桌";
@@ -61,70 +64,80 @@
             this.grpBet.Controls.Add(this.lblBetText);
             this.grpBet.Controls.Add(this.txtMoney);
             this.grpBet.Controls.Add(this.lblMoneyText);
-            this.grpBet.Font = new System.Drawing.Font("Microsoft JhengHei", 12F);
-            this.grpBet.Location = new System.Drawing.Point(12, 178);
+            this.grpBet.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.grpBet.Location = new System.Drawing.Point(18, 267);
+            this.grpBet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpBet.Name = "grpBet";
-            this.grpBet.Size = new System.Drawing.Size(485, 80);
+            this.grpBet.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpBet.Size = new System.Drawing.Size(728, 120);
             this.grpBet.TabIndex = 1;
             this.grpBet.TabStop = false;
             this.grpBet.Text = "下注";
             // 
-            // lblMoneyText
-            // 
-            this.lblMoneyText.AutoSize = true;
-            this.lblMoneyText.Location = new System.Drawing.Point(20, 36);
-            this.lblMoneyText.Name = "lblMoneyText";
-            this.lblMoneyText.Size = new System.Drawing.Size(58, 20);
-            this.lblMoneyText.TabIndex = 0;
-            this.lblMoneyText.Text = "總資金";
-            // 
-            // txtMoney
-            // 
-            this.txtMoney.Location = new System.Drawing.Point(84, 33);
-            this.txtMoney.Name = "txtMoney";
-            this.txtMoney.ReadOnly = true;
-            this.txtMoney.Size = new System.Drawing.Size(120, 29);
-            this.txtMoney.TabIndex = 1;
-            this.txtMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // lblBetText
-            // 
-            this.lblBetText.AutoSize = true;
-            this.lblBetText.Location = new System.Drawing.Point(220, 36);
-            this.lblBetText.Name = "lblBetText";
-            this.lblBetText.Size = new System.Drawing.Size(74, 20);
-            this.lblBetText.TabIndex = 2;
-            this.lblBetText.Text = "押注金額";
-            // 
-            // txtBet
-            // 
-            this.txtBet.Location = new System.Drawing.Point(300, 33);
-            this.txtBet.Name = "txtBet";
-            this.txtBet.Size = new System.Drawing.Size(90, 29);
-            this.txtBet.TabIndex = 3;
-            this.txtBet.Text = "500";
-            this.txtBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // btnBet
             // 
-            this.btnBet.Location = new System.Drawing.Point(400, 30);
+            this.btnBet.Location = new System.Drawing.Point(600, 45);
+            this.btnBet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBet.Name = "btnBet";
-            this.btnBet.Size = new System.Drawing.Size(64, 36);
+            this.btnBet.Size = new System.Drawing.Size(96, 54);
             this.btnBet.TabIndex = 4;
             this.btnBet.Text = "押注";
             this.btnBet.UseVisualStyleBackColor = true;
             this.btnBet.Click += new System.EventHandler(this.btnBet_Click);
             // 
+            // txtBet
+            // 
+            this.txtBet.Location = new System.Drawing.Point(450, 50);
+            this.txtBet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBet.Name = "txtBet";
+            this.txtBet.Size = new System.Drawing.Size(133, 39);
+            this.txtBet.TabIndex = 3;
+            this.txtBet.Text = "500";
+            this.txtBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblBetText
+            // 
+            this.lblBetText.AutoSize = true;
+            this.lblBetText.Location = new System.Drawing.Point(330, 54);
+            this.lblBetText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBetText.Name = "lblBetText";
+            this.lblBetText.Size = new System.Drawing.Size(109, 30);
+            this.lblBetText.TabIndex = 2;
+            this.lblBetText.Text = "押注金額";
+            // 
+            // txtMoney
+            // 
+            this.txtMoney.Location = new System.Drawing.Point(126, 50);
+            this.txtMoney.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMoney.Name = "txtMoney";
+            this.txtMoney.ReadOnly = true;
+            this.txtMoney.Size = new System.Drawing.Size(178, 39);
+            this.txtMoney.TabIndex = 1;
+            this.txtMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblMoneyText
+            // 
+            this.lblMoneyText.AutoSize = true;
+            this.lblMoneyText.Location = new System.Drawing.Point(30, 54);
+            this.lblMoneyText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMoneyText.Name = "lblMoneyText";
+            this.lblMoneyText.Size = new System.Drawing.Size(85, 30);
+            this.lblMoneyText.TabIndex = 0;
+            this.lblMoneyText.Text = "總資金";
+            // 
             // grpButton
             // 
             this.grpButton.Controls.Add(this.lblResult);
+            this.grpButton.Controls.Add(this.lblPrize);
             this.grpButton.Controls.Add(this.btnCheck);
             this.grpButton.Controls.Add(this.btnChangeCard);
             this.grpButton.Controls.Add(this.btnDealCard);
-            this.grpButton.Font = new System.Drawing.Font("Microsoft JhengHei", 12F);
-            this.grpButton.Location = new System.Drawing.Point(12, 264);
+            this.grpButton.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.grpButton.Location = new System.Drawing.Point(18, 396);
+            this.grpButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpButton.Name = "grpButton";
-            this.grpButton.Size = new System.Drawing.Size(485, 80);
+            this.grpButton.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpButton.Size = new System.Drawing.Size(728, 142);
             this.grpButton.TabIndex = 2;
             this.grpButton.TabStop = false;
             this.grpButton.Text = "功能";
@@ -132,18 +145,33 @@
             // lblResult
             // 
             this.lblResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblResult.Location = new System.Drawing.Point(252, 28);
+            this.lblResult.Location = new System.Drawing.Point(377, 34);
+            this.lblResult.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(223, 36);
+            this.lblResult.Size = new System.Drawing.Size(334, 39);
             this.lblResult.TabIndex = 3;
             this.lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblPrize
+            // 
+            this.lblPrize.BackColor = System.Drawing.Color.LemonChiffon;
+            this.lblPrize.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblPrize.Font = new System.Drawing.Font("微軟正黑體", 11F, System.Drawing.FontStyle.Bold);
+            this.lblPrize.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblPrize.Location = new System.Drawing.Point(377, 79);
+            this.lblPrize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrize.Name = "lblPrize";
+            this.lblPrize.Size = new System.Drawing.Size(334, 42);
+            this.lblPrize.TabIndex = 4;
+            this.lblPrize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCheck
             // 
             this.btnCheck.Enabled = false;
-            this.btnCheck.Location = new System.Drawing.Point(164, 28);
+            this.btnCheck.Location = new System.Drawing.Point(238, 53);
+            this.btnCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(82, 36);
+            this.btnCheck.Size = new System.Drawing.Size(123, 54);
             this.btnCheck.TabIndex = 2;
             this.btnCheck.Text = "判斷牌型";
             this.btnCheck.UseVisualStyleBackColor = true;
@@ -152,9 +180,10 @@
             // btnChangeCard
             // 
             this.btnChangeCard.Enabled = false;
-            this.btnChangeCard.Location = new System.Drawing.Point(94, 28);
+            this.btnChangeCard.Location = new System.Drawing.Point(133, 53);
+            this.btnChangeCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChangeCard.Name = "btnChangeCard";
-            this.btnChangeCard.Size = new System.Drawing.Size(64, 36);
+            this.btnChangeCard.Size = new System.Drawing.Size(96, 54);
             this.btnChangeCard.TabIndex = 1;
             this.btnChangeCard.Text = "換牌";
             this.btnChangeCard.UseVisualStyleBackColor = true;
@@ -162,9 +191,10 @@
             // 
             // btnDealCard
             // 
-            this.btnDealCard.Location = new System.Drawing.Point(21, 28);
+            this.btnDealCard.Location = new System.Drawing.Point(24, 53);
+            this.btnDealCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDealCard.Name = "btnDealCard";
-            this.btnDealCard.Size = new System.Drawing.Size(67, 36);
+            this.btnDealCard.Size = new System.Drawing.Size(100, 54);
             this.btnDealCard.TabIndex = 0;
             this.btnDealCard.Text = "發牌";
             this.btnDealCard.UseVisualStyleBackColor = true;
@@ -172,13 +202,14 @@
             // 
             // frmPoker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 360);
+            this.ClientSize = new System.Drawing.Size(772, 570);
             this.Controls.Add(this.grpButton);
             this.Controls.Add(this.grpBet);
             this.Controls.Add(this.grpPoker);
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmPoker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "五張撲克牌";
@@ -187,6 +218,7 @@
             this.grpBet.PerformLayout();
             this.grpButton.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -204,5 +236,7 @@
         private System.Windows.Forms.Label lblBetText;
         private System.Windows.Forms.TextBox txtBet;
         private System.Windows.Forms.Button btnBet;
+
+        private System.Windows.Forms.Label lblPrize;
     }
 }

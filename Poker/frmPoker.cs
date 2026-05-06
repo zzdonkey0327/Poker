@@ -454,7 +454,21 @@ namespace Poker
             playerMoney += winMoney;
             txtMoney.Text = playerMoney.ToString();
 
-            lblResult.Text = $"{result}，賠率 {odds} 倍，獲得 {winMoney} 元";
+            lblResult.Text = result;
+            
+
+            if (winMoney > 0)
+            {
+                lblPrize.Text = $"賠率 {odds} 倍，獲得 {winMoney} 元";
+                lblPrize.BackColor = System.Drawing.Color.LemonChiffon;
+                lblPrize.ForeColor = System.Drawing.Color.DarkRed;
+            }
+            else
+            {
+                lblPrize.Text = "未中獎";
+                lblPrize.BackColor = System.Drawing.Color.Gainsboro;
+                lblPrize.ForeColor = System.Drawing.Color.DimGray;
+            }
 
             currentBet = 0;
             isBetPlaced = false;
