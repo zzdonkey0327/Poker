@@ -143,9 +143,10 @@ namespace Poker
         /// <summary>
         /// 將 allPoker 陣列中的牌隨機打亂，模擬洗牌的過程
         /// </summary>
+        /// 
+        Random rand = new Random();
         private void Shuffle()
         {
-            Random rand = new Random();
             for (int i = 0; i < 1000; i++)
             {
                 int r = rand.Next(allPoker.Length);
@@ -200,6 +201,8 @@ namespace Poker
                 MessageBox.Show("請先下注！");
                 return;
             }
+
+            this.ActiveControl = null; // 把焦點從 TextBox 移開
 
             // 將上一把玩的結果清除
             this.lblResult.Text = "";
@@ -393,7 +396,7 @@ namespace Poker
 
             int odds = 0;
             string result = "";
-        
+
             if (isRoyalisFlush)
             {
                 result = $"{colorList[0]} 同花大順";
@@ -404,24 +407,24 @@ namespace Poker
                 result = $"{colorList[0]} 同花順";
                 odds = 50;
             }
-            else if (isStraight)
-            {
-                result = "順子";
-                odds = 25;
-            }
             else if (isFourOfAKind)
             {
                 result = $"{pointList[0]} 鐵支";
-                odds = 9;
+                odds = 25;
             }
             else if (isFullHouse)
             {
                 result = $"{pointList[0]}三張{pointList[1]}兩張 葫蘆";
-                odds = 6;
+                odds = 9;
             }
             else if (isFlush)
             {
                 result = $"{colorList[0]} 同花";
+                odds = 6;
+            }
+            else if (isStraight)
+            {
+                result = "順子";
                 odds = 4;
             }
             else if (isThreeOfAKind)
@@ -444,7 +447,7 @@ namespace Poker
                 result = "雜牌";
                 odds = 0;
             }
-            lblResult.Text = result;
+            
             btnChangeCard.Enabled = false;
             btnCheck.Enabled = false;
 
@@ -488,7 +491,7 @@ namespace Poker
         /// <param name="e"></param>
         private void frmPoker_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (this.btnDealCard.Enabled == false)
+            if (isBetPlaced && btnDealCard.Enabled == false && btnCheck.Enabled == false)
             {
                 switch(e.KeyChar)
                 {
@@ -545,6 +548,15 @@ namespace Poker
 
                 // 顯示五張撲克牌到桌面上
                 this.ShowCards();
+
+                for (int i = 0; i < pic.Length; i++)
+                {
+                    pic[i].Enabled = false;
+                    pic[i].Tag = "front";
+                }
+
+                btnChangeCard.Enabled = false;
+                btnCheck.Enabled = true;
             }
         }
         #endregion
